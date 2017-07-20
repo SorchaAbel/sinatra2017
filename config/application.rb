@@ -3,7 +3,8 @@ require 'bundler'
 Bundler.require
 $: << File.expand_path('../', __FILE__)
 Dir['./app/**/*.rb'].sort.each { |file| require file }
-Dir['./db/*'].sort.each{|file| require file}
+Dir['./db/migrate/*'].sort.each{|file| require file}
+Dir['./db/*.rb'].sort.each{|file| require file}
 
 # configure sinatra
 set :root, Dir['./app']
